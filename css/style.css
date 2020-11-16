@@ -193,3 +193,13 @@ input[type="text"], input[type="date"]{
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+
+#th{
+    background-color: #941818;
+    color: #fff;
+    width: 200px;
+}
+
+#toastContent{
+    background-color: #c63c3c;
+}

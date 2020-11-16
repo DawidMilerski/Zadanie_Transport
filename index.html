@@ -12,7 +12,7 @@
     
     <div class="container">
         <div id="header">Wpisz Swój numer telefonu, a przewoźnicy zadzwonią do Ciebie</div>
-        <form>
+        <form id="myform">
         <div class="row justify-content-center">
             <div class="col col-12 col-sm-12 col-md-6 col-lg-2">
                 <input type="text" class="form-control" id="from" placeholder="Skąd">
@@ -22,13 +22,65 @@
             </div>
             <div class="col col-2 col-sm-2 col-md-2 col-lg-1" id="tel1">
                 <select id="country" class="form-control">
-                    <option selected value="poland">+48</option>
-                    <option value="germany">+49</option>
-                    <option value="uk">+44</option>
-                    <option value="usa">+1</option>
-                    <option value="france">+33</option>
-                    <option value="russia">+7</option>
-                </select>    
+                    <option value="Albania">+355</option>
+                    <option value="Andorra">+376</option>
+                    <option value="Armenia">+374</option>
+                    <option value="Austria">+43</option>
+                    <option value="Azerbaijan">+994</option>
+                    <option value="Belarus">+375</option>
+                    <option value="Belgium">+32</option>
+                    <option value="BosniaAndHerzegovina">+387</option>
+                    <option value="Bulgaria">+359</option>
+                    <option value="Croatia">+385</option>
+                    <option value="Cyprus">+357</option>
+                    <option value="CzechRepublic">+420</option>
+                    <option value="Denmark">+45</option>
+                    <option value="Estonia">+372</option>
+                    <option value="Finland">+358</option>
+                    <option value="France">+33</option>
+                    <option value="Georgia">+995</option>
+                    <option value="Germany">+49</option>
+                    <option value="Greece">+30</option>
+                    <option value="Hungary">+36</option>
+                    <option value="Iceland">+354</option>
+                    <option value="Ireland">+353</option>
+                    <option value="Italy">+39</option>
+                    <option value="Kazakhstan">+77</option>
+                    <option value="Lativa">+371</option>
+                    <option value="Liechtenstein">+423</option>
+                    <option value="Lithuania">+370</option>
+                    <option value="Luxembourg">+352</option>
+                    <option value="Malta">+356</option>
+                    <option value="Moldova">+373</option>
+                    <option value="Monaco">+377</option>
+                    <option value="Montenegro">+382</option> <!-- Czarnogóra -->
+                    <option value="Netherlands">+31</option>
+                    <option value="Macedonia">+389</option>
+                    <option value="Norway">+47</option>
+                    <option selected value="Poland">+48</option>
+                    <option value="Portugal">+351</option>
+                    <option value="Romania">+40</option>
+                    <option value="Russia">+7</option>
+                    <option value="SanMarino">+378</option>
+                    <option value="Serbia">+381</option>
+                    <option value="Slovakia">+421</option>
+                    <option value="Slovenia">+386</option>
+                    <option value="Spain">+34</option>
+                    <option value="Sweden">+46</option>
+                    <option value="Switzerland">+41</option>
+                    <option value="Turkey">+90</option>
+                    <option value="Ukraine">+380</option>
+                    <option value="UnitedKingdom">+44</option>
+                    <option value="VaticanCity">+379</option> 
+                    <!-- ^tu jest 49, a tu v 46 -->
+                </select>
+                <!-- 
+                      onlyCountries: ["al", "ad", "at", "by", "be", "ba", "bg", "hr", "cz", "dk",
+                                        "ee", "fo", "fi", "fr", "de", "gi", "gr", "va", "hu", "is", "ie", "it", "lv",
+                                        "li", "lt", "lu", "mk", "mt", "md", "mc", "me", "nl", "no", "pl", "pt", "ro",
+                                        "ru", "sm", "rs", "sk", "si", "es", "se", "ch", "ua", "gb"
+                                        ],
+                 -->
             </div>
             <div class="col col-10 col-sm-10 col-md-4 col-lg-2" id="tel2">
                 <input type="text" class="form-control" id="phoneNumber" placeholder="Twój nr telefonu">
@@ -37,7 +89,7 @@
                 <input type="date" class="form-control" id="departureDate" placeholder="12-01-2020">
             </div>
             <div class="col col-12 col-sm-12 col-md-12 col-lg">
-                <button type="submit" class="btn btn-warning">Szukaj</button>
+                <button type="button" id="btn1" class="btn btn-warning">Szukaj</button>
             </div>
             
         </div>
@@ -114,7 +166,61 @@
             </div>
         </form>
     </div>
+
+    <div aria-live="polite" aria-atomic="true">
+
+        <div id="box" style="position: absolute; bottom: 30px; right: 30px;">
+          <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="1000">
+            <div class="toast-header" id="th">
+              <img class="rounded mr-2">
+              <strong class="mr-auto" id="toastError">Błąd!</strong>
+              <small>just now</small>
+              <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="toast-body" id="toastContent">...</div>
+          </div>
+        </div>
+      </div>
     
+    <script>
+        let myForm = document.getElementById('myForm');
+        let btn1 = document.getElementById('btn1');
+        let box = document.getElementById('box');
+        let toastTemp = document.getElementById('toast');
+        let pNumber;
+        
+        function phonePattern(){
+            pNumber = document.getElementById('phoneNumber').value;
+            console.log(pNumber);
+
+            let pattern = /^[0-9]{9}$/;
+            let NumberTest = pattern.test(pNumber);
+
+            if(NumberTest == true){
+                console.log("Dobry numer");
+            }else{
+                console.log("Zły numer");
+                Toast();  
+            }
+        }
+
+        function Toast (){
+            let toastCopy = toastTemp.cloneNode(true);
+            box.appendChild(toastCopy);
+            $(toastCopy).toast('show');
+
+            $(ToastCopy).on('hidden.bs.toast', function () {
+                $(ToastCopy).remove();
+            });
+
+            console.log('Fukcja');
+        }
+
+        // btn1.addEventListener('click', Toast);
+        btn1.addEventListener('click', phonePattern);
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
   </body>
