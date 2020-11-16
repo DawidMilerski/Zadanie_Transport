@@ -189,6 +189,8 @@
         let btn1 = document.getElementById('btn1');
         let box = document.getElementById('box');
         let toastTemp = document.getElementById('toast');
+        let toastContent = document.getElementById('toastContent');
+        str = ``;
         let pNumber;
         
         function phonePattern(){
@@ -202,11 +204,19 @@
                 console.log("Dobry numer");
             }else{
                 console.log("Zły numer");
-                Toast();  
+
+                if(pNumber == ""){
+                    str = `Brak danych!<br/> Podaj numer telefonu (9 cyfr od 0-9)`;
+                }else{
+                    str = `Podany numer tel: ${pNumber}<br/> Podaj poprawne dane! (9 cyfr od 0-9)`;
+                }
+                
+                showToast();                
             }
         }
 
-        function Toast (){
+        function showToast (){
+            toastContent.innerHTML = str;
             let toastCopy = toastTemp.cloneNode(true);
             box.appendChild(toastCopy);
             $(toastCopy).toast('show');
@@ -218,7 +228,7 @@
             console.log('Fukcja');
         }
 
-        // btn1.addEventListener('click', Toast);
+        // btn1.addEventListener('click', showToast);
         btn1.addEventListener('click', phonePattern);
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

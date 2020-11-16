@@ -197,7 +197,7 @@ input[type="text"], input[type="date"]{
 #th{
     background-color: #941818;
     color: #fff;
-    width: 200px;
+    /* min-width: 200px; */
 }
 
 #toastContent{
