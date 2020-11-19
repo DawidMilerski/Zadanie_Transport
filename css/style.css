@@ -195,11 +195,10 @@ input[type="text"], input[type="date"]{
 }
 
 #th{
-    background-color: #941818;
+    background-color: #ff921c;
     color: #fff;
-    /* min-width: 200px; */
 }
 
 #toastContent{
-    background-color: #c63c3c;
+    background-color: #424242;
 }

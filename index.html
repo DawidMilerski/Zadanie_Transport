@@ -53,7 +53,7 @@
                     <option value="Malta">+356</option>
                     <option value="Moldova">+373</option>
                     <option value="Monaco">+377</option>
-                    <option value="Montenegro">+382</option> <!-- Czarnogóra -->
+                    <option value="Montenegro">+382</option>
                     <option value="Netherlands">+31</option>
                     <option value="Macedonia">+389</option>
                     <option value="Norway">+47</option>
@@ -72,18 +72,10 @@
                     <option value="Ukraine">+380</option>
                     <option value="UnitedKingdom">+44</option>
                     <option value="VaticanCity">+379</option> 
-                    <!-- ^tu jest 49, a tu v 46 -->
                 </select>
-                <!-- 
-                      onlyCountries: ["al", "ad", "at", "by", "be", "ba", "bg", "hr", "cz", "dk",
-                                        "ee", "fo", "fi", "fr", "de", "gi", "gr", "va", "hu", "is", "ie", "it", "lv",
-                                        "li", "lt", "lu", "mk", "mt", "md", "mc", "me", "nl", "no", "pl", "pt", "ro",
-                                        "ru", "sm", "rs", "sk", "si", "es", "se", "ch", "ua", "gb"
-                                        ],
-                 -->
             </div>
             <div class="col col-10 col-sm-10 col-md-4 col-lg-2" id="tel2">
-                <input type="text" class="form-control" id="phoneNumber" placeholder="Twój nr telefonu">
+                <input type="text" class="form-control" id="phoneNumber" maxlength="9" placeholder="Twój nr telefonu">
             </div>
             <div class="col col-12 col-sm-12 col-md-6 col-lg-3">
                 <input type="date" class="form-control" id="departureDate" placeholder="12-01-2020">
@@ -170,7 +162,7 @@
     <div aria-live="polite" aria-atomic="true">
 
         <div id="box" style="position: absolute; bottom: 30px; right: 30px;">
-          <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="1000">
+          <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000">
             <div class="toast-header" id="th">
               <img class="rounded mr-2">
               <strong class="mr-auto" id="toastError">Błąd!</strong>
@@ -206,9 +198,9 @@
                 console.log("Zły numer");
 
                 if(pNumber == ""){
-                    str = `Brak danych!<br/> Podaj numer telefonu (9 cyfr od 0-9)`;
+                    str = `Brak danych!<br/> Podaj numer telefonu!`;
                 }else{
-                    str = `Podany numer tel: ${pNumber}<br/> Podaj poprawne dane! (9 cyfr od 0-9)`;
+                    str = `Podany nr tel: <strong>${pNumber}</strong><br/> Numer telefonu musi zawierać 9 cyfr`;
                 }
                 
                 showToast();                
@@ -228,7 +220,6 @@
             console.log('Fukcja');
         }
 
-        // btn1.addEventListener('click', showToast);
         btn1.addEventListener('click', phonePattern);
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
