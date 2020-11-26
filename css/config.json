@@ -19,22 +19,16 @@
       "src": "fontawesome"
     },
     {
-      "uid": "43e4647c57186b5e06874621b5e665be",
-      "css": "calendar",
-      "code": 57387,
-      "src": "linecons"
-    },
-    {
-      "uid": "531bc468eecbb8867d822f1c11f1e039",
-      "css": "calendar-1",
-      "code": 128197,
-      "src": "fontawesome"
-    },
-    {
       "uid": "afe93fc3d2e6e389194bb3771f00fdb1",
       "css": "accessibility",
       "code": 57350,
       "src": "elusive"
+    },
+    {
+      "uid": "dd6df3b754e8d0dbf09d9b24088f0442",
+      "css": "box",
+      "code": 128230,
+      "src": "iconic"
     }
   ]
 }

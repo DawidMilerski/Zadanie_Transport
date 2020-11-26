@@ -3,104 +3,55 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+    <link rel="stylesheet" href="build/css/intlTelInput.css">
+    <link rel="stylesheet" href="build/css/demo.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    
+    
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/css/fontello.css">
+    
     <title>Hello, world!</title>
   </head>
   <body>
     
     <div class="container">
         <div id="header">Wpisz Swój numer telefonu, a przewoźnicy zadzwonią do Ciebie</div>
-        <form id="myform">
-        <div class="row justify-content-center">
-            <div class="col col-12 col-sm-12 col-md-6 col-lg-2">
+        <form id="myform" class="needs-validation" novalidate>
+        <div class="form-row justify-content-center">
+            <div class="col cols col-12 col-sm-12 col-md-6 col-lg-2">
                 <input type="text" class="form-control" id="from" placeholder="Skąd">
             </div>
-            <div class="col col-12 col-sm-12 col-md-6 col-lg-2">
+            <div class="col cols col-12 col-sm-12 col-md-6 col-lg-2">
                 <input type="text" class="form-control" id="where" placeholder="Dokąd">    
             </div>
-            <div class="col col-2 col-sm-2 col-md-2 col-lg-1" id="tel1">
-                <select id="country" class="form-control">
-                    <option value="Albania">+355</option>
-                    <option value="Andorra">+376</option>
-                    <option value="Armenia">+374</option>
-                    <option value="Austria">+43</option>
-                    <option value="Azerbaijan">+994</option>
-                    <option value="Belarus">+375</option>
-                    <option value="Belgium">+32</option>
-                    <option value="BosniaAndHerzegovina">+387</option>
-                    <option value="Bulgaria">+359</option>
-                    <option value="Croatia">+385</option>
-                    <option value="Cyprus">+357</option>
-                    <option value="CzechRepublic">+420</option>
-                    <option value="Denmark">+45</option>
-                    <option value="Estonia">+372</option>
-                    <option value="Finland">+358</option>
-                    <option value="France">+33</option>
-                    <option value="Georgia">+995</option>
-                    <option value="Germany">+49</option>
-                    <option value="Greece">+30</option>
-                    <option value="Hungary">+36</option>
-                    <option value="Iceland">+354</option>
-                    <option value="Ireland">+353</option>
-                    <option value="Italy">+39</option>
-                    <option value="Kazakhstan">+77</option>
-                    <option value="Lativa">+371</option>
-                    <option value="Liechtenstein">+423</option>
-                    <option value="Lithuania">+370</option>
-                    <option value="Luxembourg">+352</option>
-                    <option value="Malta">+356</option>
-                    <option value="Moldova">+373</option>
-                    <option value="Monaco">+377</option>
-                    <option value="Montenegro">+382</option>
-                    <option value="Netherlands">+31</option>
-                    <option value="Macedonia">+389</option>
-                    <option value="Norway">+47</option>
-                    <option selected value="Poland">+48</option>
-                    <option value="Portugal">+351</option>
-                    <option value="Romania">+40</option>
-                    <option value="Russia">+7</option>
-                    <option value="SanMarino">+378</option>
-                    <option value="Serbia">+381</option>
-                    <option value="Slovakia">+421</option>
-                    <option value="Slovenia">+386</option>
-                    <option value="Spain">+34</option>
-                    <option value="Sweden">+46</option>
-                    <option value="Switzerland">+41</option>
-                    <option value="Turkey">+90</option>
-                    <option value="Ukraine">+380</option>
-                    <option value="UnitedKingdom">+44</option>
-                    <option value="VaticanCity">+379</option> 
-                </select>
+            <div class="col cols col-12 col-sm-12 col-md-6 col-lg-3">
+                <input id="phone" name="phone" type="tel" class="form-control" maxlength="9" placeholder="Twój nr telefonu" required>
             </div>
-            <div class="col col-10 col-sm-10 col-md-4 col-lg-2" id="tel2">
-                <input type="text" class="form-control" id="phoneNumber" maxlength="9" placeholder="Twój nr telefonu">
-            </div>
-            <div class="col col-12 col-sm-12 col-md-6 col-lg-3">
+            <div class="col cols col-12 col-sm-12 col-md-6 col-lg-3">
                 <input type="date" class="form-control" id="departureDate" placeholder="12-01-2020">
             </div>
-            <div class="col col-12 col-sm-12 col-md-12 col-lg">
+            <div class="col cols col-12 col-sm-12 col-md-12 col-lg">
                 <button type="button" id="btn1" class="btn btn-warning">Szukaj</button>
             </div>
             
         </div>
-            <div class="row">
-                <div class="col col-12 col-sm-12 col-md-3 col-lg-2">
+            <div class="form-row">
+                <div class="col cols col-12 col-sm-12 col-md-2 col-lg-1 checkbox1">
                     <label class="checkboxContainer1" for="checkbox-1">W obie strony
                         <input type="checkbox" class="form-check-input" id="checkbox-1">
                         <span class="checkmark1"></span>
                     </label>
                 </div>
 
-                <div class="col col-12 col-sm-12 col-md-3 col-lg-2 col1">
+                <div class="col cols col-12 col-sm-12 col-md-3 col-lg-1 checkbox2">
                     <label class="checkboxContainer1" for="checkbox-2">Wyjazd wieczorem
                         <input type="checkbox" class="form-check-input" id="checkbox-2">
                         <span class="checkmark1"></span>
                     </label>    
                 </div>
 
-                <div class="col col-12 col-sm-12 col-md-3 col-lg-2">
+                <div class="col cols col-12 col-sm-12 col-md-2 col-lg-1 checkbox3">
                     <label class="checkboxContainer1" for="checkbox-3">Wyjazd rano
                         <input type="checkbox" class="form-check-input" id="checkbox-3">
                         <span class="checkmark1"></span>
@@ -108,34 +59,37 @@
                 </div>
 
                 <div class="col col-12 col-sm-12 col-md-2 col-lg-2">
-                    <i id="person" class="icons icon-user"></i><select class="form-control" id="seats">
-                        <option value="oneS">1</option>
-                        <option value="twoS">2</option>
-                        <option value="threeS">3</option>
-                        <option value="fourS">4</option>
-                        <option value="fiveS">5</option>
-                        <option value="sixS">6</option>
-                    </select>    
-                </div>
-                
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i id="person" class="icon-user"></i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="#">1</a>
+                          <a class="dropdown-item" href="#">2</a>
+                          <a class="dropdown-item" href="#">3</a>
+                          <a class="dropdown-item" href="#">4</a>
+                          <a class="dropdown-item" href="#">5</a>
+                          <a class="dropdown-item" href="#">6</a>
+                        </div>
+                      </div>
+                </div>                
+
             </div>
-            <div class="row">
-                <div class="col col-6 col-sm-6 col-md-2 col-lg-2">
-                    <div id="cos">Chcesz zabrać:</div>
+            <div class="form-row">
+                <div class="col cols row3 col-12 col-md-2 col-lg-1">
+                    <div>Chcesz zabrać:</div>
                 </div>
-                <div class="col col-6 col-sm-6 col-md-3 col-lg-2">    
+                <div class="col cols col-12 col-md-2 col-lg-1 parcel">
                     <div id="parcel">
                         <label class="checkboxContainer2" for="checkbox-4">
-                            <svg id="icon" class="icons" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-box-seam" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
-                            </svg>
-                            <div class="labels">Paczkę</div>
-                            <input type="checkbox" class="form-check-input" id="checkbox-4">
+                            <i class="icons icon-box"></i>
+                                <div class="labels">Paczkę</div>
+                                <input type="checkbox" class="form-check-input" id="checkbox-4">
                         <span class="checkmark2"></span>
                         </label>
-                        </div>
+                    </div>
                 </div>
-                <div class="col col-6 col-sm-6 col-md-3 col-lg-2">
+                <div class="col cols col-12 col-md-2 col-lg-1 pet">
                     <div id="pet">
                         <label class="checkboxContainer2" for="checkbox-5">
                             <i class="icons icon-guidedog"></i>
@@ -145,7 +99,7 @@
                         </label>
                     </div>
                 </div>
-                <div class="col col-6 col-sm-6 col-md-3 col-lg-2 col1">
+                <div class="col cols col-12 col-md-4 col-lg-1 disability">
                     <div id="disability">
                         <label class="checkboxContainer2" for="checkbox-6">
                             <i class="icons icon-accessibility"></i>
@@ -175,32 +129,79 @@
           </div>
         </div>
       </div>
-    
+      
+      <script src="build/js/intlTelInput.js"></script>
+      <script>
+           var input = document.querySelector("#phone");
+              window.intlTelInput(input, {
+              // allowDropdown: false,
+              // autoHideDialCode: false,
+              // autoPlaceholder: "off",
+              // dropdownContainer: document.body,
+              // excludeCountries: ["us"],
+              // formatOnDisplay: false,
+              // geoIpLookup: function(callback) {
+              //   $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+              //     var countryCode = (resp && resp.country) ? resp.country : "";
+              //     callback(countryCode);
+              //   });
+              // },
+              // hiddenInput: "full_number",
+              // initialCountry: "auto",
+              // localizedCountries: { 'de': 'Deutschland' },
+              // nationalMode: false,
+              // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+              // placeholderNumberType: "MOBILE",
+              // preferredCountries: ['cn', 'jp'],
+              // separateDialCode: true,
+              utilsScript: "build/js/utils.js",
+              });
+      </script>
     <script>
         let myForm = document.getElementById('myForm');
         let btn1 = document.getElementById('btn1');
         let box = document.getElementById('box');
-        let toastTemp = document.getElementById('toast');
-        let toastContent = document.getElementById('toastContent');
+        let ToastTemp = document.getElementById('toast');
+        let ToastContent = document.getElementById('toastContent');
+        // let parcel = document.getElementById("parcel");
+        // let pet = document.getElementById('pet');
+        // let disability = document.getElementById('disability');
+        let pClass = document.getElementById('phone');
+
         str = ``;
         let pNumber;
+
+        // function TextColor(){
+
+        //         if(color1.classList.contains("style1")){
+        //             color1.classList.remove("style1");
+        //             color1.classList.add("style2");
+        //         }else{
+        //             color1.classList.remove("style2");
+        //             color1.classList.add("style1");
+        //         }  
+        // }
+
+        // document.addEventListener('click', TextColor);
         
         function phonePattern(){
-            pNumber = document.getElementById('phoneNumber').value;
+            pNumber = document.getElementById('phone').value;
             console.log(pNumber);
 
             let pattern = /^[0-9]{9}$/;
             let NumberTest = pattern.test(pNumber);
 
-            if(NumberTest == true){
-                console.log("Dobry numer");
+            if(NumberTest == true){            
+                pClass.classList.remove("is-invalid");
+                pClass.classList.add("is-valid");
             }else{
-                console.log("Zły numer");
+                pClass.classList.remove("is-valid");
+                pClass.classList.add("is-invalid");
 
                 if(pNumber == ""){
                     str = `Brak danych!<br/> Podaj numer telefonu!`;
                 }else{
-                    str = `Podany nr tel: <strong>${pNumber}</strong><br/> Numer telefonu musi zawierać 9 cyfr`;
+                    str = `Podany nr tel: <strong>${pNumber}</strong><br/> Numer telefonu musi składać się z 9 cyfr`;
                 }
                 
                 showToast();                
@@ -208,19 +209,20 @@
         }
 
         function showToast (){
-            toastContent.innerHTML = str;
-            let toastCopy = toastTemp.cloneNode(true);
-            box.appendChild(toastCopy);
-            $(toastCopy).toast('show');
+            ToastContent.innerHTML = str;
+            let ToastCopy = ToastTemp.cloneNode(true);
+            box.appendChild(ToastCopy);
+            $(ToastCopy).toast('show');
 
             $(ToastCopy).on('hidden.bs.toast', function () {
                 $(ToastCopy).remove();
             });
 
-            console.log('Fukcja');
+            console.log('Funkcja');
         }
 
         btn1.addEventListener('click', phonePattern);
+
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>

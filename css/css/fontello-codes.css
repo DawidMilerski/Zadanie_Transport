@@ -2,7 +2,6 @@
 
  
 .icon-accessibility:before { content: '\e006'; } /* '' */
-.icon-calendar:before { content: '\e02b'; } /* '' */
 .icon-guidedog:before { content: '\e08f'; } /* '' */
 .icon-user:before { content: '👤'; } /* '\1f464' */
-.icon-calendar-1:before { content: '📅'; } /* '\1f4c5' */
+.icon-box:before { content: '📦'; } /* '\1f4e6' */
