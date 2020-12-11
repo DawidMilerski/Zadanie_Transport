@@ -36,6 +36,7 @@ body{
 
 .form-control{
     padding: 25px;
+    border: none;
 }
 
 .row{
@@ -51,8 +52,9 @@ body{
     height: 50px;
 }
 
-input[type="text"], input[type="date"], input[type="tel"]{
-    border: none;
+.datepicker td, .datepicker th {
+    width: 2em;
+    height: 2em;
 }
 
 .btn-warning, .btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning:active:focus{
