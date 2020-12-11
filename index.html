@@ -3,10 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
-    <link rel="stylesheet" href="build/css/intlTelInput.css">
-    <link rel="stylesheet" href="build/css/demo.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    
+
+    <link rel="stylesheet" href="node_modules/intl-tel-input/build/css/intlTelInput.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">    
     
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/css/fontello.css">
@@ -26,10 +25,10 @@
                 <input type="text" class="form-control" id="where" placeholder="Dokąd">    
             </div>
             <div class="col cols col-12 col-sm-12 col-md-6 col-lg-3">
-                <input id="phone" name="phone" type="tel" class="form-control" maxlength="9" placeholder="Twój nr telefonu" required>
+                <input id="phone" name="phone" type="tel" class="form-control" placeholder="Twój nr telefonu" required>
             </div>
             <div class="col cols col-12 col-sm-12 col-md-6 col-lg-3">
-                <input type="date" class="form-control" id="departureDate" placeholder="12-01-2020">
+                <input type="date" class="form-control datepicker" id="departureDate">
             </div>
             <div class="col cols col-12 col-sm-12 col-md-12 col-lg">
                 <button type="button" id="btn1" class="btn btn-warning">Szukaj</button>
@@ -38,22 +37,22 @@
         </div>
             <div class="form-row">
                 <div class="col cols col-12 col-sm-12 col-md-2 col-lg-1 checkbox1">
-                    <label class="checkboxContainer1" for="checkbox-1">W obie strony
-                        <input type="checkbox" class="form-check-input" id="checkbox-1">
+                    <label class="checkboxContainer1" for="checkbox1">W obie strony
+                        <input type="checkbox" class="form-check-input" id="checkbox1">
                         <span class="checkmark1"></span>
                     </label>
                 </div>
 
                 <div class="col cols col-12 col-sm-12 col-md-3 col-lg-1 checkbox2">
-                    <label class="checkboxContainer1" for="checkbox-2">Wyjazd wieczorem
-                        <input type="checkbox" class="form-check-input" id="checkbox-2">
+                    <label class="checkboxContainer1" for="checkbox2">Wyjazd wieczorem
+                        <input type="checkbox" class="form-check-input" id="checkbox2">
                         <span class="checkmark1"></span>
                     </label>    
                 </div>
 
                 <div class="col cols col-12 col-sm-12 col-md-2 col-lg-1 checkbox3">
-                    <label class="checkboxContainer1" for="checkbox-3">Wyjazd rano
-                        <input type="checkbox" class="form-check-input" id="checkbox-3">
+                    <label class="checkboxContainer1" for="checkbox3">Wyjazd rano
+                        <input type="checkbox" class="form-check-input" id="checkbox3">
                         <span class="checkmark1"></span>
                     </label>                    
                 </div>
@@ -81,30 +80,30 @@
                 </div>
                 <div class="col cols col-12 col-md-2 col-lg-1 parcel">
                     <div id="parcel">
-                        <label class="checkboxContainer2" for="checkbox-4">
+                        <label class="checkboxContainer2" for="checkbox4">
                             <i class="icons icon-box"></i>
                                 <div class="labels">Paczkę</div>
-                                <input type="checkbox" class="form-check-input" id="checkbox-4">
+                                <input type="checkbox" onclick="parcelColor()" class="form-check-input" id="checkbox4">
                         <span class="checkmark2"></span>
                         </label>
                     </div>
                 </div>
                 <div class="col cols col-12 col-md-2 col-lg-1 pet">
                     <div id="pet">
-                        <label class="checkboxContainer2" for="checkbox-5">
+                        <label class="checkboxContainer2" for="checkbox5">
                             <i class="icons icon-guidedog"></i>
                             <div class="labels">Zwierzę</div>
-                            <input type="checkbox" class="form-check-input" id="checkbox-5">
+                            <input type="checkbox"  onclick="petColor()" class="form-check-input" id="checkbox5">
                         <span class="checkmark2"></span>
                         </label>
                     </div>
                 </div>
                 <div class="col cols col-12 col-md-4 col-lg-1 disability">
                     <div id="disability">
-                        <label class="checkboxContainer2" for="checkbox-6">
+                        <label class="checkboxContainer2" for="checkbox6">
                             <i class="icons icon-accessibility"></i>
                             <div class="labels">Niepełnosprawny</div>
-                            <input type="checkbox" class="form-check-input" id="checkbox-6">
+                            <input type="checkbox"  onclick="disabilityColor()" class="form-check-input" id="checkbox6">
                         <span class="checkmark2"></span>
                         </label>
                     </div>
@@ -130,10 +129,10 @@
         </div>
       </div>
       
-      <script src="build/js/intlTelInput.js"></script>
+      <script src="node_modules/intl-tel-input/build/js/intlTelInput.js"></script>
       <script>
            var input = document.querySelector("#phone");
-              window.intlTelInput(input, {
+               window.intlTelInput(input, {
               // allowDropdown: false,
               // autoHideDialCode: false,
               // autoPlaceholder: "off",
@@ -154,41 +153,56 @@
               // placeholderNumberType: "MOBILE",
               // preferredCountries: ['cn', 'jp'],
               // separateDialCode: true,
-              utilsScript: "build/js/utils.js",
+              utilsScript: "node_modules/intl-tel-input/build/js/utils.js",
               });
       </script>
-    <script>
-        let myForm = document.getElementById('myForm');
+    <script>       
+        let parcel = document.getElementById("parcel");
+        let pet = document.getElementById('pet');
+        let disability = document.getElementById('disability');
+        let checkbox4 = document.querySelector('#checkbox4');
+        let checkbox5 = document.querySelector('#checkbox5');
+        let checkbox6 = document.querySelector('#checkbox6');
+
         let btn1 = document.getElementById('btn1');
         let box = document.getElementById('box');
         let ToastTemp = document.getElementById('toast');
         let ToastContent = document.getElementById('toastContent');
-        // let parcel = document.getElementById("parcel");
-        // let pet = document.getElementById('pet');
-        // let disability = document.getElementById('disability');
         let pClass = document.getElementById('phone');
-
-        str = ``;
         let pNumber;
+        let str = ``;
 
-        // function TextColor(){
+        function parcelColor(){
 
-        //         if(color1.classList.contains("style1")){
-        //             color1.classList.remove("style1");
-        //             color1.classList.add("style2");
-        //         }else{
-        //             color1.classList.remove("style2");
-        //             color1.classList.add("style1");
-        //         }  
-        // }
+                if(checkbox4.checked == true){
+                    parcel.style.color = "#fff";
+                }else {
+                    parcel.style.color = "#999";
+                }
+        }
 
-        // document.addEventListener('click', TextColor);
-        
+        function petColor(){
+
+            if(checkbox5.checked == true){
+                    pet.style.color = "#fff";
+                }else {
+                    pet.style.color = "#999";
+                }
+        }
+
+        function disabilityColor(){
+            
+            if(checkbox6.checked == true){
+                    disability.style.color = "#fff";
+                }else {
+                    disability.style.color = "#999";
+                }
+        }
+
         function phonePattern(){
             pNumber = document.getElementById('phone').value;
-            console.log(pNumber);
 
-            let pattern = /^[0-9]{9}$/;
+            let pattern = /^.[0-9]{8,}$/;
             let NumberTest = pattern.test(pNumber);
 
             if(NumberTest == true){            
@@ -201,7 +215,7 @@
                 if(pNumber == ""){
                     str = `Brak danych!<br/> Podaj numer telefonu!`;
                 }else{
-                    str = `Podany nr tel: <strong>${pNumber}</strong><br/> Numer telefonu musi składać się z 9 cyfr`;
+                    str = `Podany nr tel: <strong>${pNumber}</strong><br/> Numer telefonu musi składać się z cyfr`;
                 }
                 
                 showToast();                
@@ -218,7 +232,6 @@
                 $(ToastCopy).remove();
             });
 
-            console.log('Funkcja');
         }
 
         btn1.addEventListener('click', phonePattern);

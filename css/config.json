@@ -9,26 +9,32 @@
     {
       "uid": "88ae7d00391a440ac7ccd009bcb34e4e",
       "css": "guidedog",
-      "code": 57487,
+      "code": 59392,
       "src": "elusive"
     },
     {
       "uid": "8b80d36d4ef43889db10bc1f0dc9a862",
       "css": "user",
-      "code": 128100,
+      "code": 59393,
       "src": "fontawesome"
     },
     {
       "uid": "afe93fc3d2e6e389194bb3771f00fdb1",
       "css": "accessibility",
-      "code": 57350,
+      "code": 59394,
       "src": "elusive"
     },
     {
       "uid": "dd6df3b754e8d0dbf09d9b24088f0442",
       "css": "box",
-      "code": 128230,
+      "code": 59395,
       "src": "iconic"
+    },
+    {
+      "uid": "531bc468eecbb8867d822f1c11f1e039",
+      "css": "calendar-1",
+      "code": 59396,
+      "src": "fontawesome"
     }
   ]
 }

@@ -4,6 +4,12 @@ body{
     font-size: 15px;
 }
 
+.iti__flag {background-image: url("../node_modules/intl-tel-input/build/img/flags.png");}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .iti__flag {background-image: url("../node_modules/intl-tel-input/build/img/flags@2x.png");}
+}
+
 .iti__country-name{
     color: #000;
 }
@@ -58,29 +64,6 @@ input[type="text"], input[type="date"], input[type="tel"]{
     border: none;
 }
 
-#dropdownMenuButton{
-    background-color: #424242;
-    font-size: 20px;
-    margin-top: 4px;
-    border: none;
-}
-
-.row3{
-    min-width: 110px;
-}
-
-.parcel{
-    min-width: 130px;
-}
-
-.pet{
-    min-width: 140px;
-}
-
-.disability{
-    min-width: 200px;
-}
-
 .checkbox1{
     min-width: 150px;
 }
@@ -93,6 +76,31 @@ input[type="text"], input[type="date"], input[type="tel"]{
     min-width: 130px;
 }
 
+#dropdownMenuButton{
+    background-color: #424242;
+    font-size: 20px;
+    margin-top: 4px;
+    border: none;
+}
+
+.row3{
+    min-width: 110px;
+}
+
+.parcel{
+    min-width: 115px;
+    height: 35px;
+}
+
+.pet{
+    min-width: 120px;
+    height: 35px;
+}
+
+.disability{
+    min-width: 200px;
+}
+
 #parcel, #pet, #disability{
     color: #999;
     cursor: pointer;
@@ -101,10 +109,6 @@ input[type="text"], input[type="date"], input[type="tel"]{
 .col{
     padding-left: 5px;
     padding-right: 5px;
-}
- 
- #parcel:hover, #pet:hover, #disability:hover {
-    color: #fff;
 }
 
 .labels{
@@ -118,19 +122,11 @@ input[type="text"], input[type="date"], input[type="tel"]{
     bottom: 13px;
 }
 
-.style1{
-    color: #999;
-}
-
-.style2{
-    color: #fff;
-}
-
 .checkboxContainer1{
     margin-bottom: 0px;
 }
 
-.checkboxContainer1, .checkboxContainer2 {
+.checkboxContainer1{
     display: block;
     position: relative;
     padding-left: 25px;
@@ -140,8 +136,18 @@ input[type="text"], input[type="date"], input[type="tel"]{
     -ms-user-select: none;
     user-select: none;
 }
+
+.checkboxContainer2{
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
     
-.checkboxContainer1 input, .checkboxContainer2 input {
+.checkboxContainer1 input, .checkboxContainer2 input{
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -164,14 +170,19 @@ input[type="text"], input[type="date"], input[type="tel"]{
     display: none;
     position: absolute;
     top: 10px;
-    left: 45px;
+    left: 20px;
     height: 18px;
     width: 18px;
     border: 3px solid #ff921c;
     border-radius: 9px;
 }
     
-.checkboxContainer1:hover input ~ .checkmark1, .checkboxContainer2:hover input ~ .checkmark2 {
+.checkboxContainer1:hover input ~ .checkmark1{
+    background-color: #ff921c;
+    border-color: #ff921c;
+}
+
+.checkboxContainer2:hover input ~ .checkmark2 {
     background-color: #ff921c;
     border-color: #ff921c;
 }
@@ -187,17 +198,33 @@ input[type="text"], input[type="date"], input[type="tel"]{
     border-color: #ff921c;
 }
     
-.checkmark1:after, .checkmark2:after {
+.checkmark1::after, .checkmark2::after {
     content: "";
     position: absolute;
     display: none;
 }
     
-.checkboxContainer1 input:checked ~ .checkmark1:after, .checkboxContainer2 input:checked ~ .checkmark2:after {
+.checkboxContainer1 input:checked ~ .checkmark1::after{
+    display: block;
+}
+
+.checkboxContainer2 input:checked ~ .checkmark2::after {
     display: block;
 }
     
-.checkboxContainer1 .checkmark1:after, .checkboxContainer2 .checkmark2:after{
+.checkboxContainer1 .checkmark1::after{
+    left: 3px;
+    bottom: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.checkboxContainer2 .checkmark2::after{
     left: 3px;
     bottom: 2px;
     width: 5px;
